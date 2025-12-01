@@ -24,6 +24,7 @@ PKG_FIXUP:=autoreconf
 
 PKG_LICENSE:=BSD-2-Clause
 PKG_LICENSE_FILES:=LICENSE
+PKG_CPE_ID:=cpe:/a:rtpproxy:rtpproxy
 PKG_MAINTAINER:=Jiri Slachta <jiri@slachta.eu>
 
 include $(INCLUDE_DIR)/package.mk
@@ -37,7 +38,7 @@ endef
 
 define Package/rtpproxy
 $(call Package/rtpproxy/Default)
-  DEPENDS:=+libatomic +libpthread +librt
+  DEPENDS:=+libsrtp2 +libatomic +libpthread +librt
   TITLE:=RTP (Realtime Transport Protocol) proxy
   MENU:=1
 endef
